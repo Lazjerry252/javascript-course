@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buttons</title>
+    <style>
+      .add {
+        background-color: blue;
+        color: white;
+        height: 40px;
+        width: 100px;
+        border-color: blue;
+        border-style: solid;
+        font-weight: bold;
+        border-radius: 12px;
+      }
+      .add2 {
+        background-color: green;
+        color: white;
+        height: 40px;
+        width: 40px;
+        border-color: green;
+        border-style: solid;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 12px;
+      }
+      .add3 {
+        background-color: gray;
+        color: white;
+        height: 40px;
+        width: 50px;
+        border-color: gray;
+        border-style: solid;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 12px;
+      }
+      .add4 {
+        background-color: black;
+        color: white;
+        height: 40px;
+        width: 60px;
+        border-color: gray;
+        border-style: solid;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 12px;
+      }
+      .add5 {
+        background-color: yellow;
+        color: black;
+        height: 40px;
+        width: 70px;
+        border-color: black;
+        border-style: solid;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 12px;
+      }
+      .remove {
+        margin-top: 10px;
+        background-color: white;
+        color: blue;
+        height: 40px;
+        width: 150px;
+        border-color: blue;
+        border-style: solid;
+        font-weight: bold;
+        font-size: 15px;
+        border-radius: 12px;
+      }
+      .remove2 {
+        margin-top: 10px;
+        background-color: white;
+        color: green;
+        height: 40px;
+        width: 40px;
+        border-color: green;
+        border-style: solid;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 12px;
+      }
+      .remove3 {
+        margin-top: 10px;
+        background-color: white;
+        color: gray;
+        height: 40px;
+        width: 40px;
+        border-color: gray;
+        border-style: solid;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 12px;
+      }
+      .remove4 {
+        margin-top: 10px;
+        background-color: white;
+        color: black;
+        height: 40px;
+        width: 180px;
+        border-color: black;
+        border-style: solid;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 12px;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <button class="add" onclick="
+      product += 1;
+      console.log(`Production: ${product}`);
+    "
+    >Add to cart</button>
+
+    <button class="add2" onclick="
+      product += 2;
+      console.log(`Production: ${product}`);
+    "
+
+    >+2</button>
+
+    <button class="add3" onclick="
+    product += 3;
+    console.log(`Production: ${product}`);
+  "
+
+  >+3</button>
+
+    <button class="add4" onclick="
+       product += 4;
+       console.log(`Production: ${product}`);
+      "
+    >+4</button>
+
+
+    <button class="add5" onclick="
+      product += 5;
+      console.log(`Production: ${product}`);
+    "
+    >+5</button><br>
+
+
+    <button class="remove" onclick="
+      product -= 1;
+      console.log(`Production: ${product}`);
+    "
+    >Remove from Cart</button>
+
+
+    <button class="remove2" onclick="
+      product -= 2;
+      console.log(`Production: ${product}`);
+    "
+    >-2</button>
+
+
+    <button class="remove3" onclick="
+      product -= 3;
+      console.log(`Production: ${product}`);
+    "
+    >-3</button>
+
+
+    <button class="remove4" onclick="
+      product = 0;
+      console.log(`Production was reset.`)
+      console.log(`Production: ${product}`);
+    "
+    >Reset Production</button><br>
+
+
+
+
+   <button onclick="
+     const anyNumber = Math.random();
+
+     let systemMove = '';
+
+     if (anyNumber >= 0 && anyNumber < 1/3)
+     {
+      systemMove = 'rock';
+     } else if (anyNumber >= 1/3 && anyNumber < 2/3)
+     {
+      systemMove = 'paper';
+     } else if (anyNumber >= 2/3 && anyNumber < 1) {
+      systemMove = 'scissors';
+     }
+
+     let solution = '';
+
+     if (systemMove === 'rock')
+     {
+      solution = 'Tie.';
+     } else if (systemMove === 'paper')
+     {
+      solution = 'You Lost.';
+     } else if (systemMove === 'scissors')
+     {
+      solution = 'You Won!!!.';
+     }
+
+     alert(`You picked rock. Jerry picked
+       ${systemMove}. ${solution}.`);
+   ">Rock</button>
+
+
+   <button onclick="
+     const anyNumber = Math.random();
+
+     systemMove = '';
+
+     if (anyNumber >= 0 && anyNumber < 1/3)
+     {
+      systemMove = 'rock';
+     } else if (anyNumber >= 1/3 && anyNumber < 2/3)
+     {
+      systemMove = 'paper';
+     } else if (anyNumber >= 2/3 && anyNumber < 1)
+     {
+      systemMove = 'scissors';
+     }
+
+     let solution = '';
+
+      if (systemMove === 'rock') {
+        solution = 'You win.';
+      } else if (systemMove === 'paper') {
+        solution = 'Tie.';
+      } else if (systemMove === 'scissors') {
+        solution = 'You lose.';
+      }
+
+      alert(`You picked paper. computer picked
+      ${systemMove}. ${solution}.`);
+   ">Paper</button>
+
+
+   <button>Scissors</button>
+
+
+    <script>
+
+      let product = 0;
+    </script>
+  </body>
+</html>
