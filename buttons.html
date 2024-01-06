@@ -239,7 +239,38 @@
    ">Paper</button>
 
 
-   <button>Scissors</button>
+   <button onclick="
+     const anyNumber = Math.random();
+
+     let systemMove = '';
+
+     if (anyNumber >= 0 && anyNumber < 1/3)
+     {
+      systemMove = 'rock';
+     } else if (anyNumber >= 1/3 && anyNumber < 2/3)
+     {
+      systemMove = 'paper';
+     } else if (anyNumber >= 2/3 && anyNumber < 1)
+     {
+      systemMove = 'scissors';
+     }
+
+     let solution = '';
+
+     if (systemMove === 'rock')
+     {
+      solution = 'You Lost.';
+     } else if (systemMove === 'paper')
+     {
+      solution = 'You Won!!!.';
+     } else if (systemMove === 'scissors')
+     {
+      solution = 'Tie.';
+     }
+
+     alert(`You picked paper. computer picked
+      ${systemMove}. ${solution}.`);
+   ">Scissors</button>
 
 
     <script>
