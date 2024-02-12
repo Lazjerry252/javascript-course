@@ -3,12 +3,21 @@
   <head>
     <title>Rock paper scissors Game</title>
     <style>
+      body {
+        background-color: rgb(25, 25, 25);
+        color: white;
+        font-family: Arial;
+      }
 
+      .title {
+        font-size: 30px;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
 
-    <p>Rock Paper Scissors</p>
+    <p class="title">Rock Paper Scissors</p>
     <button onclick="
       playGame('rock')
     ">Rock</button>
@@ -25,11 +34,17 @@
       playGame('scissors');
     ">Scissors</button>
 
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+
+    <p class="js-score"></p>
+
     <button onclick="
       score.wins = 0;
       score.losses = 0;
       score.ties = 0;
       localStorage.removeItem('score');
+      updateScoreElement();
     ">Reset Score</button>
 
     <script>
@@ -39,6 +54,8 @@
         losses: 0,
         ties: 0
       };
+
+      updateScoreElement();
 
      /*shortcut If (!score)*/
      /*
@@ -94,8 +111,20 @@
 
      localStorage.setItem('score', JSON.stringify(score));
 
-      alert(`You picked ${playerMove}. computer picked ${computerMove}. ${result}
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+     updateScoreElement();
+
+     document.querySelector('.js-result').
+     innerHTML = result;
+
+     document.querySelector('.js-moves').
+     innerHTML = `you ${playerMove} - ${computerMove} Computer`;
+     }
+
+
+     function updateScoreElement() {
+      document.querySelector('.js-score')
+      .innerHTML = `Wins: ${score.wins}, Losses:
+      ${score.losses}, Ties: ${score.ties}`;
      }
 
      function pickComputerMove() {

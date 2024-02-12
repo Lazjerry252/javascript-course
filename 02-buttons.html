@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>02-buttons</title>
+</head>
+<body>
+
+  <button onclick="
+    MyFirst();
+    " class="js-subscribe-button">
+    Subscribe
+  </button>
+
+  <button onclick="
+    MySecond();
+  " class="js-confirm-button">
+    Confirm
+  </button>
+
+  <button onclick="
+    MyThird();
+  " class="js-purchase-button">
+    Purchase
+  </button>
+
+  <script>
+   function MyFirst() {
+  const butttonElement = document.querySelector('.js-subscribe-button');
+
+  if (butttonElement.innerText === 'Subscribe') {
+    butttonElement.innerHTML = 'Subscribed';
+  } else {
+    butttonElement.innerHTML = 'Subscribe';
+  }
+ }
+
+   function MySecond() {
+   const butttonElement02 = document.querySelector('.js-confirm-button');
+
+   if (butttonElement02.innerText === 'Confirm') {
+    butttonElement02.innerHTML = 'Confirmed';
+   } else {
+    butttonElement02.innerHTML = 'Confirm';
+   }
+  }
+
+   function MyThird() {
+   const butttonElement03 = document.querySelector('.js-purchase-button');
+
+   if (butttonElement03.innerText === 'Purchase') {
+    butttonElement03.innerHTML = 'Purchased';
+   } else {
+    butttonElement03.innerHTML = 'Purchase';
+   }
+  }
+  </script>
+</body>
+</html>
