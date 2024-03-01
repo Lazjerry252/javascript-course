@@ -23,7 +23,24 @@
     Purchase
   </button>
 
+  <input placeholder="Search" class="js-search-input">
+  <button onclick="
+    Search();
+  ">Add</button>
+
   <script>
+   const Myarray = [];
+
+   function Search() {
+   const inputElement = document.querySelector('.js-search-input');
+  const name = inputElement.value;
+
+   Myarray.push(name);
+   console.log(Myarray);
+
+   inputElement.value = '';
+   }
+
    function MyFirst() {
   const butttonElement = document.querySelector('.js-subscribe-button');
 
@@ -44,7 +61,9 @@
    }
   }
 
+
    function MyThird() {
+
    const butttonElement03 = document.querySelector('.js-purchase-button');
 
    if (butttonElement03.innerText === 'Purchase') {
