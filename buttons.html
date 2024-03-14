@@ -270,11 +270,41 @@
 
      alert(`You picked paper. computer picked
       ${systemMove}. ${solution}.`);
-   ">Scissors</button>
+   ">Scissors</button><br>
 
+
+   <button onclick="
+     addText();
+   " class="add-button-js add-button">Add</button>
+
+   <div class="theText-js">Added</div>
 
     <script>
+      const text ='';
 
+      function generateText() {
+
+        let textHTML = '';
+
+        for (let i = 0; i < text.length; i++) {
+          const TEXT = text[i];
+          const html = `<p>Added</p>`;
+          textHTML = textHTML + html;
+        }
+        console.log(textHTML);
+
+        document.querySelector('.theText-js')
+        .innerHTML = textHTML;
+      }
+
+
+      function addText() {
+    const inputElement = document.querySelector(
+      '.add-button-js');
+      const text = inputElement.value;
+
+      generateText();
+      }
       let product = 0;
     </script>
   </body>
