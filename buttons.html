@@ -273,38 +273,25 @@
    ">Scissors</button><br>
 
 
-   <button onclick="
-     addText();
-   " class="add-button-js add-button">Add</button>
+   <button class="add-button js-add-button">
+    Add</button>
 
-   <div class="theText-js">Added</div>
+   <div class="theText-js"></div>
 
     <script>
-      const text ='';
+     document.querySelector('.js-add-button')
+       .addEventListener('click', () => {
+         addButton();
+       });
 
-      function generateText() {
+      function addButton() {
+   const myAdd = document.querySelector('.js-add-button')
+       document.querySelector(
+        '.theText-js').innerHTML = addButtonHTML;
 
-        let textHTML = '';
-
-        for (let i = 0; i < text.length; i++) {
-          const TEXT = text[i];
-          const html = `<p>Added</p>`;
-          textHTML = textHTML + html;
-        }
-        console.log(textHTML);
-
-        document.querySelector('.theText-js')
-        .innerHTML = textHTML;
       }
 
 
-      function addText() {
-    const inputElement = document.querySelector(
-      '.add-button-js');
-      const text = inputElement.value;
-
-      generateText();
-      }
       let product = 0;
     </script>
   </body>

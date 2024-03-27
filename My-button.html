@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>02-button</title>
+</head>
+<body>
+
+  <button class="js-add-button">
+    Add</button>
+
+   <div class="theText-js"></div>
+
+
+
+   <script>
+    const button = document.querySelector(
+      '.js-add-button');
+    const addedText = document.querySelector(
+      '.theText-js');
+
+    button.addEventListener('click', () => {
+     addedText.innerHTML = 'Added';
+     if (addedText.innerHTML === 'Added') {
+      setTimeout(() => {
+        addedText.innerHTML = '';
+      }, 3000);
+     }
+    });
+
+  /*
+  function clickMove() {
+    if (addedText.innerText === '') {
+      addedText.innerHTML = 'Added';
+    } else {
+      addedText.innerHTML = '';
+    }
+  }
+
+  function Autoleave() {
+     setTimeout(() => {
+      clickMove();
+    }, 3000);
+  }
+  */
+
+
+
+
+
+   </script>
+</body>
+
+</html>

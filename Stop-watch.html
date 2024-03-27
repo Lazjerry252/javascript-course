@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="styles/Stop-watch.css">
+  </head>
+  <body>
+   <div class="container">
+     <div class="main-div">
+      <div class="js-hours hrs">00</div>
+      <span class="span">:</span>
+      <div class="js-mins min">00</div>
+      <span class="span">:</span>
+      <div class="js-secs sec">00</div>
+     </div>
+
+     <button class="js-start-button start-button">Start</button>
+
+     <button class="js-stop-button stop-button">Stop</button>
+
+     <button class="js-reset-button reset-button">Reset</button>
+   </div>
+
+    <script>
+      const seconds = document.querySelector(
+        '.js-secs');
+      const mins = document.querySelector(
+        '.js-mins');
+      const hours = document.querySelector(
+        '.js-hours');
+
+       sec = 0;
+       min = 0;
+       hrs = 0;
+
+      const startButton = document.querySelector(
+        '.js-start-button');
+      const stopButton = document.querySelector(
+        '.js-stop-button');
+      const resetButton = document.querySelector(
+        '.js-reset-button');
+
+
+     startButton.addEventListener('click', () => {
+      start();
+     })
+
+     stopButton.addEventListener('click', () => {
+       stop();
+     })
+
+     resetButton.addEventListener('click', () => {
+      reset();
+     })
+
+     let running = false;
+     let timer;
+
+     function start() {
+      if (!running) {
+        if (sec === 0) {
+        timer = setInterval(() => {
+          sec += 1;
+          seconds.innerHTML = sec;
+
+        if (sec === 60) {
+          sec = 0;
+          min +=1;
+          mins.innerHTML = min;
+        } else if (min === 60) {
+          min = 0;
+          mins.innerHTML = min;
+          hrs += 1;
+          hours.innerHTML = hrs;
+        } else if (hrs === 24) {
+          hrs = 0;
+          hours.innerHTML = hrs;
+        }
+        running = true;
+        }, 1000);
+       }
+      }
+    }
+       function stop() {
+        clearInterval(timer);
+
+        running = false;
+       }
+
+       function reset() {
+        clearInterval(timer);
+
+        seconds.innerHTML = '00';
+        mins.innerHTML = '00';
+        hours.innerHTML = '00';
+
+        running = false;
+
+        sec = 0;
+        min = 0;
+        hrs = 0;
+       }
+    </script>
+  </body>
+</html>

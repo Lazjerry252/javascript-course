@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+
+    <div class="calculator">
+      <input type="text" class="js-display"/>
+      <div class="keys">
+        <button class="number1" value="1">1</button>
+        <button class="number2" value="2">2</button>
+        <button class="number3" value="3">3</button>
+        <button class="pluse" value="+">+</button>
+        <button class="number4" value="4">4</button>
+        <button class="number5" value="5">5</button>
+        <button class="number6" value="6">6</button>
+        <button class="minus" value="-">-</button>
+        <button class="number7" value="7">7</button>
+        <button class="number8" value="8">8</button>
+        <button class="number9" value="9">9</button>
+        <button class="multiply" value="*">*</button>
+        <button class="clear">C</button>
+        <button class="number0" value="0">0</button>
+        <button class="equals" value="+">=</button>
+        <button class="divide" value="/">/</button>
+      </div>
+    </div>
+
+    <script>
+
+    const zero = document.querySelector('.number0');
+    const one = document.querySelector('.number1');
+    const two = document.querySelector('.number2');
+    const three = document.querySelector('.number3');
+    const four = document.querySelector('.number4');
+    const five = document.querySelector('.number5');
+    const six = document.querySelector('.number6');
+    const seven = document.querySelector('.number7');
+    const eight = document.querySelector('.number8');
+    const nine = document.querySelector('.number9');
+    const add = document.querySelector('.pluse');
+    const substract = document.querySelector('.minus');
+    const division = document.querySelector('.divide');
+    const result = document.querySelector('.equals');
+    const multiplication = document.querySelector('.multiply');
+
+    zero.addEventListener('click', () => {
+      show(0);
+    })
+    one.addEventListener('click', () => {
+      show(1);
+    })
+    two.addEventListener('click', () => {
+      show(2);
+    })
+    three.addEventListener('click', () => {
+      show(3)
+    })
+    four.addEventListener('click', () => {
+      show(4);
+    })
+    five.addEventListener('click', () => {
+      show(5);
+    })
+    six.addEventListener('click', () => {
+      show(6);
+    })
+    seven.addEventListener('click', () => {
+      show(7);
+    })
+    eight.addEventListener('click', () => {
+      show(8);
+    })
+    nine.addEventListener('click', () => {
+      show(9);
+    })
+    add.addEventListener('click', () => {
+      show('+');
+    })
+    substract.addEventListener('click', () => {
+      show('-');
+    })
+    multiplication.addEventListener('click', () => {
+      show('*');
+    })
+    division.addEventListener('click', () => {
+      show('/');
+    })
+
+
+
+    const inputElement = document.querySelector('.js-display');
+
+    function show(value) {
+      inputElement.value += value;
+    }
+
+
+
+    </script>
+  </body>
+</html>
