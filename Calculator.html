@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>Calculator</title>
+    <style>
+      .cs-answer {
+        padding-left: 150px;
+        padding-right: 2px;
+        color: blueviolet;
+        background-color: black;
+        width: 10px;
+        margin-bottom: 0;
+      }
+
+      .cs-display[type="text"] {
+        width: 98%;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
 
     <div class="calculator">
-      <input type="text" class="js-display"/>
+    <div class="input-box">
+      <p type="text" class="js-answer cs-answer"></p><br>
+      <input type="text" class="js-display cs-display">
+    </div>
+      <button class="delete">X</button>
       <div class="keys">
         <button class="number1" value="1">1</button>
         <button class="number2" value="2">2</button>
@@ -24,11 +44,12 @@
         <button class="number0" value="0">0</button>
         <button class="equals" value="+">=</button>
         <button class="divide" value="/">/</button>
+        <button class="numberDot" value=".">.</button>
       </div>
     </div>
 
     <script>
-
+    const delete1 = document.querySelector('.delete');
     const zero = document.querySelector('.number0');
     const one = document.querySelector('.number1');
     const two = document.querySelector('.number2');
@@ -44,7 +65,12 @@
     const division = document.querySelector('.divide');
     const result = document.querySelector('.equals');
     const multiplication = document.querySelector('.multiply');
+    const clear = document.querySelector('.clear');
+    const dot = document.querySelector('.numberDot')
 
+    dot.addEventListener('click', () => {
+      show('.')
+    })
     zero.addEventListener('click', () => {
       show(0);
     })
@@ -87,10 +113,24 @@
     division.addEventListener('click', () => {
       show('/');
     })
+    delete1.addEventListener('click', () => {
 
+    })
+
+    clear.addEventListener('click', () => {
+      inputElement.value = '';
+      inputElement02.innerHTML = '';
+    })
+
+    result.addEventListener('click', () => {
+      let p = inputElement.value;
+      let j = eval(p);
+      inputElement02.innerHTML = j;
+    })
 
 
     const inputElement = document.querySelector('.js-display');
+    const inputElement02 = document.querySelector('.js-answer');
 
     function show(value) {
       inputElement.value += value;

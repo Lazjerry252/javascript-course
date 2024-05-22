@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+        <input type="text" class="js-input">
+
+    <select class="js-select">
+      <option selected value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option><br>
+    </select>
+
+    <button class="js-add">Add to Cart</button>
+
+    <script>
+
+     const input = document.querySelector('.js-input');
+     const select = document.querySelectorAll('.js-select');
+     const Add = document.querySelector('.js-add');
+    const Quantity = Number(select.value);
+     let matchMaking;
+
+     Add.addEventListener('click', () => {
+        Quantity.forEach((option) => {
+          matchMaking = option;
+        })
+        input.value = matchMaking;
+      })
+    </script>
+  </body>
+</html>
